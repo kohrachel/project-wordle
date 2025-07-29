@@ -13,10 +13,7 @@ console.info({ answer });
 function Game() {
   const [guessHistory, setGuessHistory] = useState([]);
   const handleSubmitGuess = (guess) => {
-    setGuessHistory((prevGuessHistory) => [
-      ...prevGuessHistory,
-      { label: guess, id: crypto.randomUUID() },
-    ]);
+    setGuessHistory((prevGuessHistory) => [...prevGuessHistory, guess]);
   };
   return (
     <>
