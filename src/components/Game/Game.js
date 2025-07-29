@@ -26,7 +26,7 @@ function Game() {
   return (
     <>
       <Grid guessHistory={guessHistory} correctAnswer={answer} />
-      <Guess handleSubmitGuess={handleSubmitGuess} />
+      <Guess handleSubmitGuess={handleSubmitGuess} gameOver={gameOver} />
       {gameOver ? (
         <Banner
           wonGame={isCorrectGuess}
