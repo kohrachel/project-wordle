@@ -1,17 +1,15 @@
 import React from "react";
 import { range } from "../../utils";
-
-const NUM_ROWS = 6;
-const NUM_COLS = 5;
+import { NUM_OF_GUESSES_ALLOWED } from "../../constants.js";
 
 function PreviousGuesses({ guessHistory }) {
   return (
     <div className="guess-results">
-      {range(NUM_ROWS).map((numGuess, index) => (
-        <p className="guess" key={index}>
-          {range(NUM_COLS).map((_, index) => (
-            <span className="cell" key={index}>
-              {guessHistory[numGuess]?.[index]}
+      {range(NUM_OF_GUESSES_ALLOWED).map((numGuess) => (
+        <p className="guess" key={numGuess}>
+          {range(5).map((_, cellIndex) => (
+            <span className="cell" key={cellIndex}>
+              {guessHistory[numGuess]?.[cellIndex]}
             </span>
           ))}
         </p>
