@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Guess({ guess, setGuess }) {
+function Guess({ guess, setGuess, setGuessHistory }) {
   return (
     <form
       className="guess-input-wrapper"
@@ -9,7 +9,7 @@ function Guess({ guess, setGuess }) {
         if (guess.length !== 5) {
           return;
         }
-        console.log({ guess });
+        setGuessHistory((prevGuessHistory) => [...prevGuessHistory, guess]);
         setGuess("");
       }}
     >
