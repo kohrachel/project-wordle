@@ -21,6 +21,8 @@ function Guess({ guess, setGuess, setGuessHistory }) {
         value={guess}
         minLength={5}
         maxLength={5}
+        pattern="[a-zA-Z]{5}"
+        title="Must be a 5 letter word"
         onChange={(event) => {
           const nextGuess = event.target.value.toUpperCase();
           setGuess(nextGuess);
