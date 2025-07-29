@@ -17,7 +17,7 @@ function Game() {
   };
   return (
     <>
-      <PreviousGuesses guessHistory={guessHistory} />
+      <PreviousGuesses guessHistory={guessHistory} correctAnswer={answer} />
       <Guess handleSubmitGuess={handleSubmitGuess} />
     </>
   );
