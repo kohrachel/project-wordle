@@ -11,16 +11,17 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
-  const [guess, setGuess] = useState("");
   const [guessHistory, setGuessHistory] = useState([]);
+  const handleSubmitGuess = (guess) => {
+    setGuessHistory((prevGuessHistory) => [
+      ...prevGuessHistory,
+      { label: guess, id: crypto.randomUUID() },
+    ]);
+  };
   return (
     <>
       <PreviousGuesses guessHistory={guessHistory} />
-      <Guess
-        guess={guess}
-        setGuess={setGuess}
-        setGuessHistory={setGuessHistory}
-      />
+      <Guess handleSubmitGuess={handleSubmitGuess} />
     </>
   );
 }
