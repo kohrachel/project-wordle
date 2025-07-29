@@ -7,9 +7,9 @@ const NUM_COLS = 5;
 function PreviousGuesses({ guessHistory }) {
   return (
     <div className="guess-results">
-      {range(0, NUM_ROWS).map((numGuess, index) => (
+      {range(NUM_ROWS).map((numGuess, index) => (
         <p className="guess" key={index}>
-          {range(0, NUM_COLS).map((_, index) => (
+          {range(NUM_COLS).map((_, index) => (
             <span className="cell" key={index}>
               {guessHistory[numGuess]?.[index]}
             </span>
