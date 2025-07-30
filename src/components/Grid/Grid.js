@@ -5,22 +5,17 @@ import { checkGuess } from "../../game-helpers.js";
 
 function PreviousGuesses({ guessHistory, correctAnswer }) {
   const GuessRow = ({ numGuess }) => {
-    let checkedLetters;
-    if (guessHistory[numGuess]) {
-      const currGuess = guessHistory[numGuess];
-      checkedLetters = checkGuess(currGuess, correctAnswer);
-    }
+    const currGuess = guessHistory[numGuess];
+    const checkedLetters = currGuess
+      ? checkGuess(currGuess, correctAnswer)
+      : undefined;
+    const status = checkedLetters?.[cellIndex].status;
 
     return (
       <p className="guess">
         {range(5).map((_, cellIndex) => (
-          <span
-            className={`cell ${
-              checkedLetters ? checkedLetters[cellIndex].status : ""
-            }`}
-            key={cellIndex}
-          >
-            {guessHistory[numGuess]?.[cellIndex]}
+          <span className={`cell ${status}`} key={cellIndex}>
+            {currGuess?.[cellIndex]}
           </span>
         ))}{" "}
       </p>
@@ -34,29 +29,6 @@ function PreviousGuesses({ guessHistory, correctAnswer }) {
         // <GuessROwSameThing .. />
       ))}
     </div>
-  );
-}
-
-function GuessROwSameThing() {
-  let checkedLetters;
-  if (guessHistory[numGuess]) {
-    const currGuess = guessHistory[numGuess];
-    checkedLetters = checkGuess(currGuess, correctAnswer);
-  }
-
-  return (
-    <p className="guess">
-      {range(5).map((_, cellIndex) => (
-        <span
-          className={`cell ${
-            checkedLetters ? checkedLetters[cellIndex].status : ""
-          }`}
-          key={cellIndex}
-        >
-          {guessHistory[numGuess]?.[cellIndex]}
-        </span>
-      ))}{" "}
-    </p>
   );
 }
 

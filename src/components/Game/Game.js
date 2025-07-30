@@ -27,14 +27,12 @@ function Game() {
     <>
       <Grid guessHistory={guessHistory} correctAnswer={answer} />
       <Guess handleSubmitGuess={handleSubmitGuess} gameOver={gameOver} />
-      {gameOver ? (
+      {gameOver && (
         <Banner
           wonGame={isCorrectGuess}
           numGuesses={numGuesses}
           answer={answer}
         />
-      ) : (
-        ""
       )}
     </>
   );
