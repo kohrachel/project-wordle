@@ -1,3 +1,29 @@
+# Wordle!
+
+Built in 5 exercises, following the structure of Project 1 of [Josh Comeau's Joy of React](https://www.joyofreact.com/) :)
+
+This was super fun, I think I burned a ton of brain cells in the process but I also learned a lot. Looking forward to the rest of the course. Gamxia Zi for helping me structure the project
+
+## Game in Action
+
+![Clipboard-20250729-221459-692](https://github.com/user-attachments/assets/e81cb78e-b62b-4b9d-b585-6fd1f77cf6d5)
+
+## Letter Highlighting
+
+<img width="1044" height="515" alt="image" src="https://github.com/user-attachments/assets/d6ae0a22-1b91-44b8-832a-996a34f423ae" />
+
+## Losing the Game
+
+You lose if you don't get the correct word in six tries
+
+![Clipboard-20250729-223409-088](https://github.com/user-attachments/assets/9f4189f9-a553-4fb4-9630-571e0ba05367)
+
+## Being extra on UI: Getting it in 1 guess vs multiple guessES
+
+![Clipboard-20250729-222830-099](https://github.com/user-attachments/assets/63c9d862-b67c-475c-a74c-13535b725d46)
+
+<pre align="center">Initial README.md file with project instructions below</pre>
+
 # Word Game
 
 ## Joy of React, Project I
@@ -167,7 +193,7 @@ Inside `/src/game-helpers.js`, you'll find a helper function, `checkGuess`. As p
 For example:
 
 ```js
-checkGuess('WHALE', 'LEARN');
+checkGuess("WHALE", "LEARN");
 /*
   Returns:
 
@@ -225,10 +251,7 @@ The user wins the game when their guessed word is identical to the `answer`. The
 
 ```html
 <div class="happy banner">
-  <p>
-    <strong>Congratulations!</strong> Got it in
-    <strong>3 guesses</strong>.
-  </p>
+  <p><strong>Congratulations!</strong> Got it in <strong>3 guesses</strong>.</p>
 </div>
 ```
 
